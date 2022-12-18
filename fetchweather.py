@@ -9,7 +9,7 @@ for country in pycountry.countries:
     countries[country.name]=country.alpha_2
 codes=[countries.get(country.title(),'Unknown Code') for country in input_countries]
 
-option = input("Which category are you interested in?\n1.Business\n2.Entertainment\n3.General\n4.Health\n5.Science\n6.Technology\n\nEnter here: ")
+option = input("Which category are you interested in?\n1.Business\n2.Entertainment\n3.General\n4.Health\n5.Science\n6.Technology\n\nEnter your desired category: ")
 
 top_headlines=newsapi.get_top_headlines(category=f'{option.lower()}', language='en', country=f'{codes[0].lower()}')
 Headlines=top_headlines['articles']
